@@ -44,7 +44,7 @@ function App() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 1.5 }}
         >
           <ParallaxBackground currentSection={currentSection} />
           
@@ -69,12 +69,12 @@ function App() {
                   });
                 }}
               >
-                <div className={`w-4 h-4 rounded-full border-2 transition-all duration-500 ${
+                <div className={`w-4 h-4 rounded-full border-2 transition-all duration-300 ${
                   currentSection === i 
                     ? 'bg-orange-500 border-orange-500 shadow-lg shadow-orange-500/50' 
-                    : 'border-white/30 hover:border-orange-400'
+                    : 'border-white/50 hover:border-orange-400'
                 }`} />
-                <span className="absolute right-6 top-1/2 transform -translate-y-1/2 text-xs font-bold text-white/70 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                <span className="absolute right-6 top-1/2 transform -translate-y-1/2 text-sm font-bold text-white bg-black/80 px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap backdrop-blur-sm">
                   {label}
                 </span>
               </motion.div>

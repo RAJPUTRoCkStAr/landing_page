@@ -5,48 +5,25 @@ import { ChevronDown } from 'lucide-react';
 const HeroSection: React.FC = () => {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Mystical Fog */}
+      {/* Simplified Background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-orange-900/20 via-black to-red-900/20" />
+      
+      {/* Reduced Particle Count */}
       <div className="absolute inset-0">
-        {[...Array(8)].map((_, i) => (
+        {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-96 h-96 bg-gradient-radial from-purple-900/20 via-purple-600/10 to-transparent rounded-full blur-3xl"
+            className="absolute w-1 h-1 bg-orange-400 rounded-full"
             animate={{
-              x: [0, 100, -100, 0],
-              y: [0, -50, 50, 0],
-              scale: [1, 1.5, 0.8, 1],
-              opacity: [0.3, 0.7, 0.3, 0.3]
+              y: [window.innerHeight, -100],
+              x: [0, (Math.random() - 0.5) * 100],
+              opacity: [0, 0.8, 0]
             }}
             transition={{
-              duration: 15 + i * 2,
+              duration: 8,
               repeat: Infinity,
-              ease: "easeInOut",
-              delay: i * 2
-            }}
-            style={{
-              left: Math.random() * 100 + '%',
-              top: Math.random() * 100 + '%'
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Lightning Effects */}
-      <div className="absolute inset-0">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-px h-full bg-gradient-to-b from-transparent via-purple-400/50 to-transparent"
-            animate={{
-              opacity: [0, 1, 0],
-              scaleY: [0, 1, 0],
-              x: [0, Math.random() * 200 - 100]
-            }}
-            transition={{
-              duration: 0.3,
-              repeat: Infinity,
-              repeatDelay: 3 + Math.random() * 5,
-              delay: Math.random() * 3
+              delay: Math.random() * 8,
+              ease: "linear"
             }}
             style={{
               left: Math.random() * 100 + '%'
@@ -58,48 +35,41 @@ const HeroSection: React.FC = () => {
       {/* Main Content */}
       <div className="relative z-10 text-center px-8">
         <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
+          initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 2, ease: "easeOut" }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
         >
           <motion.h1
-            className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 leading-none"
+            className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 leading-none text-white"
             style={{
-              background: "linear-gradient(45deg, #f97316, #ea580c, #dc2626, #f97316)",
-              backgroundSize: "400% 400%",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text"
-            }}
-            animate={{
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-              ease: "linear"
+              textShadow: "0 0 30px rgba(249, 115, 22, 0.8), 0 0 60px rgba(249, 115, 22, 0.4)"
             }}
           >
-            EVOLUTION
+            <span className="bg-gradient-to-r from-orange-400 via-red-500 to-orange-600 bg-clip-text text-transparent">
+              EVOLUTION
+            </span>
           </motion.h1>
 
           <motion.h2
             className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-white"
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.5, delay: 0.5 }}
+            transition={{ duration: 1.2, delay: 0.3 }}
             style={{
-              textShadow: "0 0 30px rgba(249, 115, 22, 0.5)"
+              textShadow: "0 0 20px rgba(255, 255, 255, 0.5)"
             }}
           >
             OF THE APEX
           </motion.h2>
 
           <motion.p
-            className="text-xl md:text-2xl text-orange-300 max-w-4xl mx-auto leading-relaxed mb-16"
-            initial={{ opacity: 0, y: 50 }}
+            className="text-xl md:text-2xl text-orange-200 max-w-4xl mx-auto leading-relaxed mb-16"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 1 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            style={{
+              textShadow: "0 0 10px rgba(0, 0, 0, 0.8)"
+            }}
           >
             Witness the transformation from humble beginnings to cybernetic supremacy. 
             A journey through evolution, power, and digital transcendence.
@@ -109,26 +79,12 @@ const HeroSection: React.FC = () => {
             className="flex justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.5 }}
+            transition={{ delay: 0.9 }}
           >
             <motion.button
-              className="px-12 py-6 text-xl font-bold border-2 border-orange-500 text-orange-500 rounded-full hover:bg-orange-500 hover:text-black transition-all duration-500 backdrop-blur-sm"
-              whileHover={{ 
-                scale: 1.1,
-                boxShadow: "0 0 50px rgba(249, 115, 22, 0.5)",
-                textShadow: "0 0 20px #000000"
-              }}
-              animate={{
-                boxShadow: [
-                  "0 0 0px rgba(249, 115, 22, 0)",
-                  "0 0 30px rgba(249, 115, 22, 0.3)",
-                  "0 0 0px rgba(249, 115, 22, 0)"
-                ]
-              }}
-              transition={{
-                duration: 4,
-                repeat: Infinity
-              }}
+              className="px-12 py-6 text-xl font-bold border-2 border-orange-500 text-orange-400 bg-black/50 rounded-full hover:bg-orange-500 hover:text-black transition-all duration-300 backdrop-blur-sm"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               BEGIN EVOLUTION
             </motion.button>
@@ -144,31 +100,6 @@ const HeroSection: React.FC = () => {
       >
         <ChevronDown className="w-8 h-8 text-orange-400" />
       </motion.div>
-
-      {/* Ambient Particles */}
-      <div className="absolute inset-0">
-        {[...Array(50)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-orange-400 rounded-full"
-            animate={{
-              y: [window.innerHeight, -100],
-              x: [0, (Math.random() - 0.5) * 200],
-              opacity: [0, 1, 0],
-              scale: [0, Math.random() * 2, 0]
-            }}
-            transition={{
-              duration: 8 + Math.random() * 4,
-              repeat: Infinity,
-              delay: Math.random() * 8,
-              ease: "easeOut"
-            }}
-            style={{
-              left: Math.random() * 100 + '%'
-            }}
-          />
-        ))}
-      </div>
     </section>
   );
 };
