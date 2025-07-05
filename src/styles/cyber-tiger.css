@@ -361,9 +361,3 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(45deg, #ea580c, #b91c1c);
 }
-
-/* Mouse Tracking */
-document.addEventListener('mousemove', (e) => {
-  document.documentElement.style.setProperty('--mouse-x', e.clientX + 'px');
-  document.documentElement.style.setProperty('--mouse-y', e.clientY + 'px');
-});
