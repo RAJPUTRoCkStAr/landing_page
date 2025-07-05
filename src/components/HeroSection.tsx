@@ -1,78 +1,27 @@
-import React, { useRef, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { Sphere, MeshDistortMaterial, Float, Environment } from '@react-three/drei';
-import * as THREE from 'three';
-
-const QuantumOrb: React.FC = () => {
-  const meshRef = useRef<THREE.Mesh>(null);
-  
-  useFrame((state) => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.3) * 0.2;
-      meshRef.current.rotation.y += 0.01;
-      meshRef.current.rotation.z = Math.cos(state.clock.elapsedTime * 0.2) * 0.1;
-    }
-  });
-
-  return (
-    <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-      <Sphere ref={meshRef} args={[2, 100, 100]} scale={1.5}>
-        <MeshDistortMaterial
-          color="#00ffff"
-          attach="material"
-          distort={0.6}
-          speed={2}
-          roughness={0.1}
-          metalness={0.8}
-        />
-      </Sphere>
-    </Float>
-  );
-};
+import React from 'react';
+import { motion } from 'framer-motion';
+import { ChevronDown } from 'lucide-react';
 
 const HeroSection: React.FC = () => {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"]
-  });
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, -500]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-
   return (
-    <section 
-      ref={sectionRef}
-      className="relative h-screen flex items-center justify-center overflow-hidden"
-    >
-      {/* 3D Background */}
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      {/* Mystical Fog */}
       <div className="absolute inset-0">
-        <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} intensity={1} />
-          <QuantumOrb />
-          <Environment preset="night" />
-        </Canvas>
-      </div>
-
-      {/* Quantum Field Effect */}
-      <div className="absolute inset-0">
-        {[...Array(100)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-cyan-400 rounded-full"
+            className="absolute w-96 h-96 bg-gradient-radial from-purple-900/20 via-purple-600/10 to-transparent rounded-full blur-3xl"
             animate={{
-              x: [0, Math.random() * window.innerWidth],
-              y: [0, Math.random() * window.innerHeight],
-              opacity: [0, 1, 0],
-              scale: [0, Math.random() * 2, 0]
+              x: [0, 100, -100, 0],
+              y: [0, -50, 50, 0],
+              scale: [1, 1.5, 0.8, 1],
+              opacity: [0.3, 0.7, 0.3, 0.3]
             }}
             transition={{
-              duration: 5 + Math.random() * 5,
+              duration: 15 + i * 2,
               repeat: Infinity,
-              delay: Math.random() * 5,
-              ease: "easeInOut"
+              ease: "easeInOut",
+              delay: i * 2
             }}
             style={{
               left: Math.random() * 100 + '%',
@@ -82,52 +31,41 @@ const HeroSection: React.FC = () => {
         ))}
       </div>
 
-      {/* Neural Network Lines */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <motion.line
+      {/* Lightning Effects */}
+      <div className="absolute inset-0">
+        {[...Array(6)].map((_, i) => (
+          <motion.div
             key={i}
-            x1={Math.random() * window.innerWidth}
-            y1={Math.random() * window.innerHeight}
-            x2={Math.random() * window.innerWidth}
-            y2={Math.random() * window.innerHeight}
-            stroke="url(#gradient)"
-            strokeWidth="1"
-            opacity="0.3"
+            className="absolute w-px h-full bg-gradient-to-b from-transparent via-purple-400/50 to-transparent"
             animate={{
-              x2: [Math.random() * window.innerWidth, Math.random() * window.innerWidth],
-              y2: [Math.random() * window.innerHeight, Math.random() * window.innerHeight]
+              opacity: [0, 1, 0],
+              scaleY: [0, 1, 0],
+              x: [0, Math.random() * 200 - 100]
             }}
             transition={{
-              duration: 8,
+              duration: 0.3,
               repeat: Infinity,
-              ease: "easeInOut"
+              repeatDelay: 3 + Math.random() * 5,
+              delay: Math.random() * 3
+            }}
+            style={{
+              left: Math.random() * 100 + '%'
             }}
           />
         ))}
-        <defs>
-          <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#00ffff" />
-            <stop offset="50%" stopColor="#8b5cf6" />
-            <stop offset="100%" stopColor="#ec4899" />
-          </linearGradient>
-        </defs>
-      </svg>
+      </div>
 
       {/* Main Content */}
-      <motion.div 
-        className="relative z-10 text-center px-8"
-        style={{ y, opacity }}
-      >
+      <div className="relative z-10 text-center px-8">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 2, ease: "easeOut" }}
         >
           <motion.h1
-            className="text-8xl md:text-[12rem] font-black mb-8 leading-none"
+            className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 leading-none"
             style={{
-              background: "linear-gradient(45deg, #00ffff, #8b5cf6, #ec4899, #00ffff)",
+              background: "linear-gradient(45deg, #f97316, #ea580c, #dc2626, #f97316)",
               backgroundSize: "400% 400%",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
@@ -142,60 +80,95 @@ const HeroSection: React.FC = () => {
               ease: "linear"
             }}
           >
-            BEYOND
+            EVOLUTION
           </motion.h1>
 
           <motion.h2
-            className="text-6xl md:text-8xl font-bold mb-12 text-white"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 text-white"
             initial={{ opacity: 0, y: 100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, delay: 0.5 }}
+            style={{
+              textShadow: "0 0 30px rgba(249, 115, 22, 0.5)"
+            }}
           >
-            REALITY
+            OF THE APEX
           </motion.h2>
 
           <motion.p
-            className="text-2xl md:text-3xl text-cyan-300 max-w-4xl mx-auto leading-relaxed mb-16"
+            className="text-xl md:text-2xl text-orange-300 max-w-4xl mx-auto leading-relaxed mb-16"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 1 }}
           >
-            Enter a dimension where consciousness meets code, where imagination transcends the boundaries of the possible
+            Witness the transformation from humble beginnings to cybernetic supremacy. 
+            A journey through evolution, power, and digital transcendence.
           </motion.p>
 
           <motion.div
-            className="flex justify-center space-x-8"
+            className="flex justify-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
           >
-            {['EXPLORE', 'TRANSCEND', 'EVOLVE'].map((text, i) => (
-              <motion.div
-                key={text}
-                className="px-8 py-4 border-2 border-cyan-400 rounded-full text-cyan-400 font-bold text-lg cursor-pointer hover:bg-cyan-400 hover:text-black transition-all duration-300"
-                whileHover={{ scale: 1.1, boxShadow: "0 0 30px #00ffff" }}
-                animate={{
-                  boxShadow: [
-                    "0 0 0px #00ffff",
-                    "0 0 20px #00ffff",
-                    "0 0 0px #00ffff"
-                  ]
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  delay: i * 0.5
-                }}
-              >
-                {text}
-              </motion.div>
-            ))}
+            <motion.button
+              className="px-12 py-6 text-xl font-bold border-2 border-orange-500 text-orange-500 rounded-full hover:bg-orange-500 hover:text-black transition-all duration-500 backdrop-blur-sm"
+              whileHover={{ 
+                scale: 1.1,
+                boxShadow: "0 0 50px rgba(249, 115, 22, 0.5)",
+                textShadow: "0 0 20px #000000"
+              }}
+              animate={{
+                boxShadow: [
+                  "0 0 0px rgba(249, 115, 22, 0)",
+                  "0 0 30px rgba(249, 115, 22, 0.3)",
+                  "0 0 0px rgba(249, 115, 22, 0)"
+                ]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity
+              }}
+            >
+              BEGIN EVOLUTION
+            </motion.button>
           </motion.div>
         </motion.div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        <ChevronDown className="w-8 h-8 text-orange-400" />
       </motion.div>
 
-      {/* Holographic Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent pointer-events-none" />
+      {/* Ambient Particles */}
+      <div className="absolute inset-0">
+        {[...Array(50)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-1 h-1 bg-orange-400 rounded-full"
+            animate={{
+              y: [window.innerHeight, -100],
+              x: [0, (Math.random() - 0.5) * 200],
+              opacity: [0, 1, 0],
+              scale: [0, Math.random() * 2, 0]
+            }}
+            transition={{
+              duration: 8 + Math.random() * 4,
+              repeat: Infinity,
+              delay: Math.random() * 8,
+              ease: "easeOut"
+            }}
+            style={{
+              left: Math.random() * 100 + '%'
+            }}
+          />
+        ))}
+      </div>
     </section>
   );
 };

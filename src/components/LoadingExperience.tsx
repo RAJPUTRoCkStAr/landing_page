@@ -8,26 +8,26 @@ const LoadingExperience: React.FC = () => {
       exit={{ opacity: 0, scale: 0.8 }}
       transition={{ duration: 1.5, ease: "easeInOut" }}
     >
-      {/* DNA Helix Loading Animation */}
+      {/* Tiger DNA Helix */}
       <div className="relative">
         <motion.div
-          className="w-32 h-32 relative"
+          className="w-40 h-40 relative"
           animate={{ rotateY: 360 }}
           transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
         >
-          {[...Array(12)].map((_, i) => (
+          {[...Array(16)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-4 h-4 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full"
+              className="absolute w-6 h-6 bg-gradient-to-r from-orange-400 to-red-500 rounded-full"
               style={{
                 left: '50%',
                 top: '50%',
                 transformOrigin: '0 0'
               }}
               animate={{
-                rotateZ: i * 30,
-                x: [0, 60 * Math.cos(i * Math.PI / 6)],
-                y: [0, 60 * Math.sin(i * Math.PI / 6)],
+                rotateZ: i * 22.5,
+                x: [0, 80 * Math.cos(i * Math.PI / 8)],
+                y: [0, 80 * Math.sin(i * Math.PI / 8)],
                 scale: [0.5, 1.5, 0.5]
               }}
               transition={{
@@ -40,15 +40,15 @@ const LoadingExperience: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Quantum Particles */}
+        {/* Evolution Particles */}
         <div className="absolute inset-0">
-          {[...Array(50)].map((_, i) => (
+          {[...Array(60)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-1 h-1 bg-cyan-400 rounded-full"
+              className="absolute w-1 h-1 bg-orange-400 rounded-full"
               animate={{
-                x: [0, (Math.random() - 0.5) * 800],
-                y: [0, (Math.random() - 0.5) * 800],
+                x: [0, (Math.random() - 0.5) * 1000],
+                y: [0, (Math.random() - 0.5) * 1000],
                 opacity: [0, 1, 0],
                 scale: [0, 1, 0]
               }}
@@ -75,7 +75,7 @@ const LoadingExperience: React.FC = () => {
         transition={{ delay: 1 }}
       >
         <motion.h2
-          className="text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+          className="text-5xl font-bold mb-6"
           animate={{
             backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
           }}
@@ -85,17 +85,21 @@ const LoadingExperience: React.FC = () => {
             ease: "linear"
           }}
           style={{
-            backgroundSize: "200% 200%"
+            background: "linear-gradient(90deg, #f97316, #ea580c, #dc2626, #f97316)",
+            backgroundSize: "200% 200%",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text"
           }}
         >
-          Initializing Reality
+          Initializing Evolution
         </motion.h2>
         <motion.p
-          className="text-gray-400 text-lg"
+          className="text-orange-400 text-xl"
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
-          Preparing dimensional gateway...
+          Preparing digital transformation...
         </motion.p>
       </motion.div>
     </motion.div>
