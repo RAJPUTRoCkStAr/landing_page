@@ -1,8 +1,21 @@
-import React from 'react';
-import HeroSection from './components/HeroSection';
+import React, { useEffect, useState } from 'react';
+import PremiumLoadingExperience from './components/PremiumLoadingExperience';
+import MainAppContent from './components/MainAppContent';
+import './styles/tiger-evolution.css';
 
 function App() {
-  return <HeroSection />;
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoaded(true), 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!isLoaded) {
+    return <PremiumLoadingExperience />;
+  }
+
+  return <MainAppContent />;
 }
 
 export default App;
