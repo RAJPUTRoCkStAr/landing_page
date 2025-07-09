@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion';
+import { motion, useScroll, useTransform, useSpring, AnimatePresence, cubicBezier } from 'framer-motion';
 import { ChevronDown, Zap, Eye, Crown, Cpu, Sparkles, Target } from 'lucide-react';
 import PremiumTigerSVG from './PremiumTigerSVG';
 
@@ -24,7 +24,7 @@ const MainAppContent: React.FC = () => {
   const tigerScale = useTransform(smoothProgress, 
     [0, 0.15, 0.3, 0.5, 0.7, 0.85, 1], 
     [0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.5],
-    { ease: [0.25, 0.46, 0.45, 0.94] }
+    { ease: cubicBezier(0.25, 0.46, 0.45, 0.94) }
   );
   
   const tigerRotate = useTransform(smoothProgress, [0, 1], [0, 720]);
