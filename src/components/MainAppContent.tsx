@@ -353,7 +353,7 @@ const MainAppContent: React.FC = () => {
                   scale: currentStage === index ? [1, 1.03, 1] : 1
                 }}
                 transition={{ 
-                  textShadow: { duration: 5, repeat: Infinity },
+                  textShadow: { duration: 5 },
                   scale: { duration: 3, repeat: Infinity }
                 }}
               >
