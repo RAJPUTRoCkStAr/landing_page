@@ -54,8 +54,9 @@ const HeroSection: React.FC = () => {
               opacity: [0.3, 0.8, 0.3]
             }}
             transition={{
-              duration: 4 + Math.random() * 4,
-              repeat: Infinity,
+              duration: 5 + Math.random() * 5,
+              repeat: 999999,
+              ease: [0.4, 0.0, 0.6, 1],
               delay: Math.random() * 2
             }}
             style={{
@@ -73,7 +74,7 @@ const HeroSection: React.FC = () => {
           x: mousePosition.x - 12,
           y: mousePosition.y - 12
         }}
-        transition={{ type: "spring", stiffness: 500, damping: 28 }}
+        transition={{ type: "spring", stiffness: 600, damping: 30 }}
       />
 
       {/* Hero Content */}
@@ -131,7 +132,7 @@ const HeroSection: React.FC = () => {
             className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
           >
             <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4)" }}
+              whileHover={{ scale: 1.06, boxShadow: "0 25px 50px rgba(59, 130, 246, 0.5)" }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-semibold text-lg flex items-center gap-3 shadow-lg hover:shadow-blue-500/25 transition-all duration-300"
             >
@@ -140,7 +141,7 @@ const HeroSection: React.FC = () => {
             </motion.button>
             
             <motion.button
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.06 }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 border-2 border-slate-600 rounded-full text-white font-semibold text-lg hover:border-blue-500 hover:text-blue-400 transition-all duration-300"
             >
@@ -177,7 +178,7 @@ const HeroSection: React.FC = () => {
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            transition={{ duration: 2.5, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] }}
             className="flex flex-col items-center text-slate-400"
           >
             <span className="text-sm mb-2">Scroll to explore</span>
@@ -217,7 +218,7 @@ const HeroSection: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -10, scale: 1.02 }}
+                whileHover={{ y: -12, scale: 1.03 }}
                 className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-300"
               >
                 <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mb-6">
@@ -266,8 +267,8 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             viewport={{ once: true }}
             whileHover={{ 
-              scale: 1.05, 
-              boxShadow: "0 25px 50px rgba(59, 130, 246, 0.5)" 
+              scale: 1.06, 
+              boxShadow: "0 30px 60px rgba(59, 130, 246, 0.6)" 
             }}
             whileTap={{ scale: 0.95 }}
             className="px-12 py-6 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full text-white font-bold text-xl flex items-center gap-4 mx-auto shadow-2xl hover:shadow-blue-500/30 transition-all duration-300"
