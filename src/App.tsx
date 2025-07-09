@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import PremiumLoadingExperience from './components/PremiumLoadingExperience';
 import MainAppContent from './components/MainAppContent';
-import './styles/tiger-evolution.css';
+import './styles/premium-evolution.css';
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
