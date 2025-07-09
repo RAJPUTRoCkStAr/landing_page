@@ -14,8 +14,8 @@ const PremiumLoadingExperience: React.FC = () => {
           className="quantum-dna-helix"
           animate={{ rotateY: 360, rotateX: 15 }}
           transition={{ 
-            rotateY: { duration: 6, repeat: Infinity, ease: "linear" },
-            rotateX: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+            rotateY: { duration: 6, repeat: 999999, ease: "linear" },
+            rotateX: { duration: 4, repeat: 999999, ease: "easeInOut" }
           }}
         >
           {[...Array(30)].map((_, i) => (
@@ -31,10 +31,10 @@ const PremiumLoadingExperience: React.FC = () => {
                 rotateY: [0, 180, 360]
               }}
               transition={{
-                duration: 3,
-                repeat: Infinity,
+                duration: 3.5,
+                repeat: 999999,
                 delay: i * 0.1,
-                ease: "easeInOut"
+                ease: [0.4, 0.0, 0.2, 1]
               }}
             />
           ))}
@@ -57,10 +57,10 @@ const PremiumLoadingExperience: React.FC = () => {
                 scale: [0, 1.5, 0]
               }}
               transition={{
-                duration: 4,
-                repeat: Infinity,
+                duration: 4.5,
+                repeat: 999999,
                 delay: Math.random() * 4,
-                ease: "easeOut"
+                ease: [0.25, 0.46, 0.45, 0.94]
               }}
             />
           ))}
@@ -80,8 +80,8 @@ const PremiumLoadingExperience: React.FC = () => {
             backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
           }}
           transition={{
-            duration: 4,
-            repeat: Infinity,
+            duration: 5,
+            repeat: 999999,
             ease: "linear"
           }}
         >
@@ -101,9 +101,9 @@ const PremiumLoadingExperience: React.FC = () => {
               opacity: [0, 1, 0]
             }}
             transition={{ 
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
+              duration: 2.5,
+              repeat: 999999,
+              ease: [0.4, 0.0, 0.6, 1]
             }}
           />
         </motion.div>
@@ -115,9 +115,9 @@ const PremiumLoadingExperience: React.FC = () => {
             scale: [1, 1.02, 1]
           }}
           transition={{ 
-            duration: 2.5, 
-            repeat: Infinity,
-            ease: "easeInOut"
+            duration: 3, 
+            repeat: 999999,
+            ease: [0.4, 0.0, 0.6, 1]
           }}
         >
           Initializing digital consciousness matrix...
@@ -135,6 +135,7 @@ const PremiumLoadingExperience: React.FC = () => {
               className="stat-value"
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 1, repeat: Infinity }}
+              transition={{ duration: 1.2, repeat: 999999, ease: "easeInOut" }}
             >
               ONLINE
             </motion.span>
@@ -145,6 +146,7 @@ const PremiumLoadingExperience: React.FC = () => {
               className="stat-value"
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 1.2, repeat: Infinity }}
+              transition={{ duration: 1.4, repeat: 999999, ease: "easeInOut" }}
             >
               STABLE
             </motion.span>
@@ -155,6 +157,7 @@ const PremiumLoadingExperience: React.FC = () => {
               className="stat-value"
               animate={{ opacity: [0.5, 1, 0.5] }}
               transition={{ duration: 0.8, repeat: Infinity }}
+              transition={{ duration: 1, repeat: 999999, ease: "easeInOut" }}
             >
               READY
             </motion.span>

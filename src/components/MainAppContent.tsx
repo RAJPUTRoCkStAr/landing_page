@@ -197,10 +197,10 @@ const MainAppContent: React.FC = () => {
               opacity: [0, 0.9, 0.6, 0]
             }}
             transition={{
-              duration: 25 + Math.random() * 20,
-              repeat: Infinity,
+              duration: 30 + Math.random() * 25,
+              repeat: 999999,
               delay: Math.random() * 25,
-              ease: "linear"
+              ease: [0.25, 0.46, 0.45, 0.94]
             }}
           />
         ))}
@@ -224,10 +224,10 @@ const MainAppContent: React.FC = () => {
               y: [(Math.random() - 0.5) * 100, (Math.random() - 0.5) * 200]
             }}
             transition={{
-              duration: 20 + Math.random() * 15,
-              repeat: Infinity,
+              duration: 25 + Math.random() * 20,
+              repeat: 999999,
               delay: Math.random() * 15,
-              ease: "easeInOut"
+              ease: [0.4, 0.0, 0.2, 1]
             }}
           />
         ))}
@@ -259,9 +259,9 @@ const MainAppContent: React.FC = () => {
             opacity: [0.2, 0.8, 0.2]
           }}
           transition={{
-            rotate: { duration: 30, repeat: Infinity, ease: "linear" },
-            scale: { duration: 8, repeat: Infinity, ease: "easeInOut" },
-            opacity: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+            rotate: { duration: 35, repeat: 999999, ease: "linear" },
+            scale: { duration: 10, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] },
+            opacity: { duration: 6, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] }
           }}
         />
         <motion.div
@@ -272,9 +272,9 @@ const MainAppContent: React.FC = () => {
             opacity: [0.15, 0.7, 0.15]
           }}
           transition={{
-            rotate: { duration: 22, repeat: Infinity, ease: "linear" },
-            scale: { duration: 6, repeat: Infinity, ease: "easeInOut" },
-            opacity: { duration: 4, repeat: Infinity, ease: "easeInOut" }
+            rotate: { duration: 28, repeat: 999999, ease: "linear" },
+            scale: { duration: 8, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] },
+            opacity: { duration: 5, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] }
           }}
         />
         <motion.div
@@ -285,9 +285,9 @@ const MainAppContent: React.FC = () => {
             opacity: [0.1, 0.5, 0.1]
           }}
           transition={{
-            rotate: { duration: 35, repeat: Infinity, ease: "linear" },
-            scale: { duration: 10, repeat: Infinity, ease: "easeInOut" },
-            opacity: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+            rotate: { duration: 42, repeat: 999999, ease: "linear" },
+            scale: { duration: 12, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] },
+            opacity: { duration: 7, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] }
           }}
         />
         <motion.div
@@ -298,9 +298,9 @@ const MainAppContent: React.FC = () => {
             opacity: [0.05, 0.3, 0.05]
           }}
           transition={{
-            rotate: { duration: 40, repeat: Infinity, ease: "linear" },
-            scale: { duration: 12, repeat: Infinity, ease: "easeInOut" },
-            opacity: { duration: 7, repeat: Infinity, ease: "easeInOut" }
+            rotate: { duration: 48, repeat: 999999, ease: "linear" },
+            scale: { duration: 15, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] },
+            opacity: { duration: 8, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] }
           }}
         />
       </div>
@@ -324,9 +324,9 @@ const MainAppContent: React.FC = () => {
                   y: currentStage === index ? [0, -15, 0] : 0
                 }}
                 transition={{
-                  duration: 4,
-                  repeat: currentStage === index ? Infinity : 0,
-                  ease: "easeInOut"
+                  duration: 5,
+                  repeat: currentStage === index ? 999999 : 0,
+                  ease: [0.4, 0.0, 0.6, 1]
                 }}
               >
                 <div 
@@ -353,8 +353,8 @@ const MainAppContent: React.FC = () => {
                   scale: currentStage === index ? [1, 1.03, 1] : 1
                 }}
                 transition={{ 
-                  textShadow: { duration: 5 },
-                  scale: { duration: 3, repeat: Infinity }
+                  textShadow: { duration: 6, ease: [0.4, 0.0, 0.6, 1] },
+                  scale: { duration: 4, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] }
                 }}
               >
                 {stage.title}
@@ -368,9 +368,9 @@ const MainAppContent: React.FC = () => {
                   scale: currentStage === index ? [1, 1.02, 1] : 1
                 }}
                 transition={{ 
-                  duration: 4, 
-                  repeat: Infinity,
-                  ease: "easeInOut"
+                  duration: 5, 
+                  repeat: 999999,
+                  ease: [0.4, 0.0, 0.6, 1]
                 }}
               >
                 {stage.subtitle}
@@ -402,7 +402,7 @@ const MainAppContent: React.FC = () => {
                     ]
                   }}
                   transition={{ 
-                    boxShadow: { duration: 4, repeat: Infinity },
+                    boxShadow: { duration: 5, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] },
                     hover: { duration: 0.3 }
                   }}
                 >
@@ -415,6 +415,7 @@ const MainAppContent: React.FC = () => {
                       opacity: [0.2, 0.8, 0.2]
                     }}
                     transition={{ duration: 3, repeat: Infinity }}
+                    transition={{ duration: 4, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] }}
                   />
                 </motion.button>
               )}
@@ -447,9 +448,9 @@ const MainAppContent: React.FC = () => {
                 rotate: currentStage === index ? [0, 360, 720] : 0
               }}
               transition={{ 
-                scale: { duration: 3, repeat: Infinity },
-                boxShadow: { duration: 2, repeat: Infinity },
-                rotate: { duration: 5, repeat: Infinity }
+                scale: { duration: 4, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] },
+                boxShadow: { duration: 3, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] },
+                rotate: { duration: 6, repeat: 999999, ease: "linear" }
               }}
             >
               <stage.icon size={16} />
@@ -471,14 +472,15 @@ const MainAppContent: React.FC = () => {
             }}
             exit={{ opacity: 0, y: -40 }}
             transition={{ 
-              y: { duration: 3, repeat: Infinity },
-              scale: { duration: 3, repeat: Infinity },
+              y: { duration: 4, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] },
+              scale: { duration: 4, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] },
               exit: { duration: 0.6 }
             }}
           >
             <motion.div
               animate={{ rotate: [0, 15, -15, 0] }}
               transition={{ duration: 4, repeat: Infinity }}
+              transition={{ duration: 5, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] }}
             >
               <ChevronDown size={42} />
             </motion.div>
@@ -490,6 +492,7 @@ const MainAppContent: React.FC = () => {
                 opacity: [0.2, 0.9, 0.2]
               }}
               transition={{ duration: 3, repeat: Infinity }}
+              transition={{ duration: 4, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] }}
             />
           </motion.div>
         )}

@@ -72,9 +72,9 @@ const PremiumTigerSVG: React.FC<PremiumTigerSVGProps> = ({
             opacity: [0.7, 1, 0.7]
           }}
           transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut"
+            duration: 6,
+            repeat: 999999,
+            ease: [0.4, 0.0, 0.6, 1]
           }}
         >
           {/* Enhanced Main Body */}
@@ -93,9 +93,9 @@ const PremiumTigerSVG: React.FC<PremiumTigerSVGProps> = ({
               strokeWidth: [4, 6, 4]
             }}
             transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut"
+              duration: 5,
+              repeat: 999999,
+              ease: [0.4, 0.0, 0.6, 1]
             }}
           />
 
@@ -114,9 +114,9 @@ const PremiumTigerSVG: React.FC<PremiumTigerSVGProps> = ({
               strokeWidth: [4, 7, 4]
             }}
             transition={{
-              duration: 3.5,
-              repeat: Infinity,
-              ease: "easeInOut"
+              duration: 4.5,
+              repeat: 999999,
+              ease: [0.4, 0.0, 0.6, 1]
             }}
           />
 
@@ -132,8 +132,9 @@ const PremiumTigerSVG: React.FC<PremiumTigerSVGProps> = ({
               opacity: [0.7, 1, 0.7]
             }}
             transition={{
-              duration: 2.5,
-              repeat: Infinity
+              duration: 3,
+              repeat: 999999,
+              ease: [0.4, 0.0, 0.6, 1]
             }}
           />
           <motion.circle
@@ -147,8 +148,9 @@ const PremiumTigerSVG: React.FC<PremiumTigerSVGProps> = ({
               opacity: [0.7, 1, 0.7]
             }}
             transition={{
-              duration: 2.5,
-              repeat: Infinity,
+              duration: 3,
+              repeat: 999999,
+              ease: [0.4, 0.0, 0.6, 1],
               delay: 0.7
             }}
           />
@@ -165,8 +167,9 @@ const PremiumTigerSVG: React.FC<PremiumTigerSVGProps> = ({
               opacity: [0.8, 1, 0.8]
             }}
             transition={{
-              duration: 2,
-              repeat: Infinity
+              duration: 2.5,
+              repeat: 999999,
+              ease: [0.4, 0.0, 0.6, 1]
             }}
           />
           <motion.ellipse
@@ -180,8 +183,9 @@ const PremiumTigerSVG: React.FC<PremiumTigerSVGProps> = ({
               opacity: [0.8, 1, 0.8]
             }}
             transition={{
-              duration: 2,
-              repeat: Infinity,
+              duration: 2.5,
+              repeat: 999999,
+              ease: [0.4, 0.0, 0.6, 1],
               delay: 0.4
             }}
           />
@@ -201,8 +205,9 @@ const PremiumTigerSVG: React.FC<PremiumTigerSVGProps> = ({
                 pathLength: [0.8, 1, 0.8]
               }}
               transition={{
-                duration: 3,
-                repeat: Infinity,
+                duration: 4,
+                repeat: 999999,
+                ease: [0.4, 0.0, 0.6, 1],
                 delay: i * 0.3
               }}
             />
@@ -226,10 +231,10 @@ const PremiumTigerSVG: React.FC<PremiumTigerSVGProps> = ({
               strokeWidth: [3, 5, 3]
             }}
             transition={{
-              r: { duration: 5, repeat: Infinity },
-              strokeOpacity: { duration: 4, repeat: Infinity },
-              rotate: { duration: 25, repeat: Infinity, ease: "linear" },
-              strokeWidth: { duration: 3, repeat: Infinity }
+              r: { duration: 6, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] },
+              strokeOpacity: { duration: 5, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] },
+              rotate: { duration: 30, repeat: 999999, ease: "linear" },
+              strokeWidth: { duration: 4, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] }
             }}
           />
 
@@ -249,9 +254,9 @@ const PremiumTigerSVG: React.FC<PremiumTigerSVGProps> = ({
               rotate: -360
             }}
             transition={{
-              r: { duration: 6, repeat: Infinity },
-              strokeOpacity: { duration: 3.5, repeat: Infinity },
-              rotate: { duration: 20, repeat: Infinity, ease: "linear" }
+              r: { duration: 7, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] },
+              strokeOpacity: { duration: 4.5, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] },
+              rotate: { duration: 25, repeat: 999999, ease: "linear" }
             }}
           />
         </motion.g>
@@ -274,8 +279,9 @@ const PremiumTigerSVG: React.FC<PremiumTigerSVGProps> = ({
                   strokeWidth: [3, 6, 3]
                 }}
                 transition={{
-                  duration: 0.8,
-                  repeat: Infinity,
+                  duration: 1,
+                  repeat: 999999,
+                  ease: [0.4, 0.0, 0.6, 1],
                   delay: Math.random() * 3,
                   repeatDelay: 3
                 }}
@@ -303,8 +309,9 @@ const PremiumTigerSVG: React.FC<PremiumTigerSVGProps> = ({
                   height: [6, 10, 6]
                 }}
                 transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
+                  duration: 2,
+                  repeat: 999999,
+                  ease: [0.4, 0.0, 0.6, 1],
                   delay: i * 0.15
                 }}
               />
@@ -325,9 +332,9 @@ const PremiumTigerSVG: React.FC<PremiumTigerSVGProps> = ({
                   scale: [0.8 + i * 0.1, 1.2 + i * 0.1, 0.8 + i * 0.1]
                 }}
                 transition={{
-                  opacity: { duration: 2, repeat: Infinity },
-                  rotate: { duration: 8, repeat: Infinity, ease: "linear" },
-                  scale: { duration: 3, repeat: Infinity }
+                  opacity: { duration: 2.5, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] },
+                  rotate: { duration: 10, repeat: 999999, ease: "linear" },
+                  scale: { duration: 4, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] }
                 }}
               />
             ))}
@@ -354,9 +361,9 @@ const PremiumTigerSVG: React.FC<PremiumTigerSVGProps> = ({
                 rotate: 360
               }}
               transition={{
-                r: { duration: 8, repeat: Infinity },
-                strokeOpacity: { duration: 4, repeat: Infinity },
-                rotate: { duration: 30, repeat: Infinity, ease: "linear" }
+                r: { duration: 10, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] },
+                strokeOpacity: { duration: 5, repeat: 999999, ease: [0.4, 0.0, 0.6, 1] },
+                rotate: { duration: 35, repeat: 999999, ease: "linear" }
               }}
             />
 
@@ -376,8 +383,9 @@ const PremiumTigerSVG: React.FC<PremiumTigerSVGProps> = ({
                   scale: [1, 1.5, 1]
                 }}
                 transition={{
-                  duration: 3,
-                  repeat: Infinity,
+                  duration: 4,
+                  repeat: 999999,
+                  ease: [0.4, 0.0, 0.6, 1],
                   delay: i * 0.4
                 }}
               />
